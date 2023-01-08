@@ -1,38 +1,37 @@
 package data;
 
 public abstract class User {
-    private String fio;
-    private int age;
-    private int passport;
+    private String firstName;
+    private String lastName;
+    private int id;
 
-    public User(String fio, int age, int passport) {
-        this.fio = fio;
-        this.age = age;
-        this.passport = passport;
+    public User(String firstName, String lastName, int id) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.id = id;
     }
 
-    public String getFio() {
-        return fio;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setFio(String fio) {
-        this.fio = fio;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public int getAge() {
-        return age;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
-    public int getPassport() {
-        return passport;
+    public int getId() {
+        return id;
     }
 
-    public void setPassport(int passport) {
-        this.passport = passport;
+    public void setId(int id) {
+        this.id = id;
     }
 }
-

@@ -1,9 +1,9 @@
 package service;
 
-import data.User;
+import data.StudentGroup;
 
 public interface DataService {
-    void create(User user);
+    StudentGroup getGroup();
 
-    User read(User user);
+    StudentGroup getGroup(int number);
 }

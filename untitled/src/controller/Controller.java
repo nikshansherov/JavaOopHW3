@@ -1,29 +1,26 @@
 package controller;
 
-import data.Student;
 import data.StudentGroup;
-import service.DataGroupService;
+import data.GroupStream;
 import service.DataService;
-import service.StudentGroupServiceImpl;
-import service.StudentServiceImpl;
+import service.GroupStreamService;
+
+import java.util.List;
 
 public class Controller {
-    private DataService studentService;
-    private DataGroupService groupService;
-    private StudentGroup groupNumber;
+    private final DataService groupService;
+    private GroupStreamService groupStreamService;
 
-    public Controller(StudentServiceImpl studentService, StudentGroupServiceImpl groupService, StudentGroup groupNumber) {
-        this.studentService = studentService;
+    public Controller(DataService groupService, GroupStreamService groupStreamService) {
         this.groupService = groupService;
-        this.groupNumber = groupNumber;
+        this.groupStreamService = groupStreamService;
     }
 
-    public Student createStudent(Student student) {
-        studentService.create(student);
-        return (Student) studentService.read(student);
+    public StudentGroup createGroup(int groupNumber) {
+        return groupService.getGroup(groupNumber);
     }
 
-    public StudentGroup createGroup(StudentGroupServiceImpl groupNumber) {
-        return groupService.readGroup((StudentGroup) groupService);
+    public void streamListSort(List<GroupStream> groupStream) {
+        groupStreamService.streamSort(groupStream);
     }
 }

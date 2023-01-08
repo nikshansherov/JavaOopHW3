@@ -1,32 +1,39 @@
 package data;
 
-import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
-public class StudentGroup {
+import data.iterators.StudentGroupIterator;
+
+public class StudentGroup implements Iterable<Student> {
+    private Teacher teacher;
+    private List<Student> studentList;
     private int groupNumber;
-    private String teacher;
-    private ArrayList listStudent = new ArrayList<>();
 
-    public StudentGroup(int groupNumber, String teacher, ArrayList listStudent) {
-        this.groupNumber = groupNumber;
+    public StudentGroup(Teacher teacher, List<Student> studentList) {
         this.teacher = teacher;
-        this.listStudent = listStudent;
+        this.studentList = studentList;
     }
 
-    public String getTeacher() {
+    public StudentGroup(Teacher teacher, List<Student> studentList, int groupNumber) {
+        this(teacher, studentList);
+        this.groupNumber = groupNumber;
+    }
+
+    public Teacher getTeacher() {
         return teacher;
     }
 
-    public void setTeacher(String teacher) {
+    public void setTeacher(Teacher teacher) {
         this.teacher = teacher;
     }
 
-    public ArrayList getListStudent() {
-        return listStudent;
+    public List<Student> getStudentList() {
+        return studentList;
     }
 
-    public void setListStudent(ArrayList listStudent) {
-        this.listStudent = listStudent;
+    public void setStudentList(List<Student> listStudent) {
+        this.studentList = studentList;
     }
 
     public int getGroupNumber() {
@@ -35,5 +42,9 @@ public class StudentGroup {
 
     public void setGroupNumber(int groupNumber) {
         this.groupNumber = groupNumber;
+    }
+
+    public Iterator<Student> iterator() {
+        return new StudentGroupIterator(this);
     }
 }

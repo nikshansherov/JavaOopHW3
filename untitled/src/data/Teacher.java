@@ -1,10 +1,10 @@
 package data;
 
 public class Teacher extends User {
-    private String department;
+    private String rank;
 
-    public Teacher(String fio, int age, int passport, String department) {
-        super(fio, age, passport);
-        this.department = department;
+    public Teacher(String firstName, String lastName, int id, String rank) {
+        super(firstName, lastName, id);
+        this.rank = rank;
     }
 }
