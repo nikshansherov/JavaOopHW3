@@ -1,7 +1,6 @@
 package data;
 
-import data.iterators.GroundStreamIterator;
-
+import data.iterators.GroupStreamIterator;
 import java.util.Iterator;
 import java.util.List;
 
@@ -21,6 +20,6 @@ public class GroupStream implements Iterable<StudentGroup> {
     }
 
     public Iterator<StudentGroup> iterator() {
-        return new GroundStreamIterator(this);
+        return new GroupStreamIterator(this);
     }
 }

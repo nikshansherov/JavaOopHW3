@@ -6,12 +6,12 @@ import data.StudentGroup;
 import java.util.Iterator;
 import java.util.List;
 
-public class GroundStreamIterator implements Iterator<StudentGroup> {
+public class GroupStreamIterator implements Iterator<StudentGroup> {
     private int cursor;
     private final GroupStream groundStream;
     private final List<StudentGroup> studentGroups;
 
-    public GroundStreamIterator(GroupStream groundStream) {
+    public GroupStreamIterator(GroupStream groundStream) {
         this.groundStream = groundStream;
         this.studentGroups = groundStream.getStudentGroup();
     }
@@ -25,7 +25,5 @@ public class GroundStreamIterator implements Iterator<StudentGroup> {
         return studentGroups.get(cursor++);
     }
 
-    public void remove() {
-        this.studentGroups.remove(cursor);
-    }
+
 }
